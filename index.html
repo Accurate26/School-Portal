@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="loginbox">
+            <div class="logo">
+                <img src="ei_1763096957655-removebg-preview.png">
+                <span>The Bliss College Of<br>Technology Abeokuta</span>
+            </div>
+            <div class="login-form">
+                <h2>You Are Welcome!</h2>
+                <h4>Input your data to login</h4>
+                <form action="login.php" method="post">
+                    <div class="inputbox">
+                        <input type="text" name="studentID" placeholder="0987654321" required>
+                        <span>Student ID</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" name="password" placeholder="Enter Password" required>
+                        <span>Password</span>
+                    </div>
+                    <button type="submit" name="login">Login</button>
+
+                    <div class="remember">
+                        <input type="checkbox" name="remember" id="remember">
+                        <span>Remember me</span>
+                    </div>
+
+                    <div class="register">
+                        <p>Don't have an account? <a href="register.html">Register</a></p>
+                    </div>
+                </form>
+
+                <h4></h4>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
