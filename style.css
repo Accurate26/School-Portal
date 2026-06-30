@@ -1,12 +1,13 @@
 *{
     margin: 0;
     padding: 0; 
+    /* height: 100vh; */
     font-family: 'Poppins', sans-serif;        
 }
 
 .container{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(20260622_120730.jpg);
     background-size: cover;
     background-position: center;
@@ -15,6 +16,7 @@
     position: relative;
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: darken;
+    /* overflow-y: hidden; */
 }
 
 .loginbox{
@@ -36,7 +38,7 @@
 
 .logo{
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     margin-bottom: 30px;
 }
@@ -71,14 +73,16 @@
 }
 
 form input[type="text"], input[type="password"]{
-    border: none;
-    border-bottom: 1px solid #050789;
-    background: transparent;
+    border: 1px solid #050789;
+    border-radius: 5px;
+    background-color: #d2def0;
     outline: none;
     height: 40px;
     color: #000000;
     font-size: 16px;
     margin-bottom: 20px;
+    width: 235px;
+    padding-left: 20px;
 }
 
 form span{
@@ -138,112 +142,6 @@ form button{
 }
 
 
-/* REGISTER PAGE CSS */
-
-
-.ctn{
-    width: 100%;
-    height: 100vh;
-    background-image: url(20260622_120730.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
-    background-blend-mode: darken;
-}
-
-.ctn .register{ 
-    width: 400px;
-    height: 600px;
-    background: rgba(254, 254, 254, 0.792);
-    color: #000000;
-    top: 50%;
-    left: 25%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.register .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.ctn .register .logo span{
-    font-size: 12px;
-    /* font-weight: bold; */
-    color: #050789;
-    margin-left: 10px;
-    
-}
-
-.register .logo img{
-    width: 50px;
-    height: 50px;
-}
-
-.register-form{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-}
-
-.register-form input[type="text"],
-.register-form input[type="email"],
-.register-form input[type="password"]{
-    border: none;
-    border-bottom: 1px solid #050789;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #000000;
-    font-size: 16px;
-    margin-bottom: 10px;
-    display: flex;
-
-}
-
-.register-form button{
-    border: none;
-    outline: none;
-    height: 40px;
-    width: 200px;
-    background: #17419c;
-    color: gold;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.register-form button:hover{
-    background: #050789;
-    color: white;
-    
-}
-
-.register h1{
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    color: #050789;
-}
-
-.register label{
-    color: #000000;
-    font-size: 14px;
-    margin-bottom: 10px;
-
-}
 
 /* STUDENT PORTAL CSS */
 /* PORTALLLLLLL */
@@ -256,51 +154,33 @@ form button{
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: darken;
-}
-
-.portalbox .logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.portalbox .logo span{
-    font-size: 12px;
-    font-weight: bold;
-    color: #050789;
-    margin-left: 10px;
-    
-}
-
-.portalbox .logo img{
-    width: 50px;
-    height: 50px;
 }
 
 .portalbox{
     width: 800px;
-    height: 600px;
-    background: rgba(255, 255, 255, 0.646);
+    height: 550px;
+    background: rgba(255, 255, 255, 0.6);
     color: #000000;
     top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 50px 30px;
+    /* box-sizing: border-box; */
+    padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .welcome{
     text-align: center;
     color: #050789;
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -311,6 +191,7 @@ form button{
     height: 80px;
     margin-right: 10px;
     align-items: center;
+    margin-top: 10px;
 }
 
 .welcome-text{
@@ -320,22 +201,31 @@ form button{
     align-items: center;
     font-size: 14px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .portal-form{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .portalbtn{
     display: grid;
-    grid-template-rows: 2fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.portal-form a{
+.portalbtn :hover{
+    background: #050789;
+    color: white;
+    
+}
+
+.portalbtn a{
     border: none;
     outline: none;
     height: 40px;
@@ -346,18 +236,22 @@ form button{
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 30px;
-}
-
-.portal-form button:hover{
-    background: #050789;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     
 }
 
 
+
+
 /* STUDENT PROFILE CSS */
+.container-bkg{
+    background-color: #ffffff;
+}
 .profile-card{
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(205, 224, 240, 0.8);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -368,56 +262,39 @@ form button{
     justify-content: center;
     align-items: center;
     width: 800px;
+    min-height: 200vh;
+    margin: 0px auto;
+    /* overflow-y: scroll; */
+}
+
+.student-data{
+    /* background: rgba(217, 227, 248, 0.8); */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
     margin: 10px auto;
 }
 
-.header{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin-top: 10px auto;
-    background: rgba(255, 255, 255, 0.8);
-   
-}
 
-.header .logo{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.container .header .logo span{
-    font-size: 10px;
-    color: #050789;
-    margin-left: 1px;
-    
-}
-.header h1{
+.profile-card h1{
     text-align: center;
     color: #050789;
     
     
 }
 
-.header img{
-    width: 40px;
-    height: 40px;
-    margin-left: 30px;
-    align-items: center;
-    margin-top: 8px;
-}
-
-.profile-photo{
+.student-data img{
     width: 100px;
     height: 100px;
     border-radius: 10%;
     object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.profile-card h2{
-    color: #050789;
     margin-bottom: 10px;
 }
 
@@ -453,19 +330,17 @@ form button{
 }
 
 .registeredcourses{
-    background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     gap: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 800px;
-    margin: 40px auto;
-    margin-top: 90px;
+    width: 700px;
+    margin: 20px auto;
+    
 
 }
 
@@ -477,12 +352,19 @@ form button{
 .registeredcourses table{
     width: 100%;
     border-collapse: collapse;
+    
 }
 
 .registeredcourses th, .registeredcourses td{
     border: 1px solid #050789;
     padding: 10px;
     text-align: left;
+    
+}
+
+.registeredcourses th{
+    background-color: #0234a0;
+    color: white;
 }
 
 
@@ -652,13 +534,8 @@ form button{
 
 /* REGISTRATION PORTAL */
 
-.regbkg{
-    position: relative;
-    overflow-y: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    padding: 30px 0px;
+.container-reg{
+    background-color: rgb(209, 227, 242);
 }
 
 .regcard{
@@ -673,6 +550,7 @@ form button{
     justify-content: center;
     align-items: center;  
     width: 800px;
+    margin: 0px auto;
     /* overflow-y: scroll; */
 
 }
@@ -685,15 +563,10 @@ form button{
 
 }
 
-/* .container{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-} */
-
+.reginput{
+    width: 700px;
+    
+}
 .reginput h1{
     text-align:center;
     color:#000c66;

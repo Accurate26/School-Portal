@@ -19,10 +19,10 @@
             </div>
 
             <div class="welcome">
-                <img src="user image.jpg" alt="">
+                <img id='studentImg'  src="user image.jpg" alt="">
                 <div class="welcome-text">
-                    <h2>Welcome, [Student Name]!</h2>
-                    <h4>Your Student ID: [Student ID]</h4>
+                    <h2 id="studentName">Welcome, [Student Name]!</h2>
+                    <h4 id="studentId">Your Student ID: [Student ID]</h4>
                 </div>
             </div>
 
@@ -32,10 +32,9 @@
                 <div class="portalbtn">
                     <a href="studentprofile.html">View Profile</a>
                     <a href="coursereg.html">Register For Courses</a>
-                    <a href="view_results.html">View Results</a>
+                    <a href="resultpage.html">View Results</a>
                     <a href="make_payments.html">Make Payments</a>
-                    <a href="request_transcript.html">Request Transcript</a>
-                    <a href="logout.html">Logout</a>
+                    
                 </div>
 
                 <h4></h4>
@@ -45,6 +44,29 @@
     </div>
 
 
-    
+    <script>
+        const students =
+            JSON.parse(
+                localStorage.getItem("students")
+            ) || [];
+
+        const current_student_id = localStorage.getItem('loggedInStudent')
+        
+        if (!current_student_id){
+            window.location.href = "index.html";
+        }
+
+        const current_student_data = students.filter((i)=>i.studentId === current_student_id)
+
+        console.log(current_student_data)
+        const studentName = document.getElementById('studentName')
+        const studentId = document.getElementById('studentId')
+        const studentImage = document.getElementById('studentImg')
+
+        studentName.textContent = `Welcome, ${current_student_data[0].surname} ${current_student_data[0].firstName}`
+        studentId.textContent = `Your Matric Number: ${current_student_data[0].matricNo}`
+
+        studentImage.src = current_student_data[0].passport
+    </script>
 </body>
 </html>

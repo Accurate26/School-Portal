@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration Portal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container regbkg">
+    <div class="container-reg">
             <div class="regcard">
                 <div class="logo">
                     <img src="ei_1763096957655-removebg-preview.png">
@@ -26,18 +26,15 @@
                 <div class="reginput">
                     <h1>STUDENT REGISTRATION FORM</h1>
 
-                    <form>
+                    <form>                      
 
-                        <!-- PASSPORT -->
-                        <h2>Passport Photograph</h2>
+                        <!-- BIODATA -->
+                        <h2>Personal Biodata</h2>
 
                         <div class="form-group">
                             <label>Upload Passport Photograph</label>
                             <input type="file" accept="image/*">
                         </div>
-
-                        <!-- BIODATA -->
-                        <h2>Personal Biodata</h2>
 
                         <div class="row">
 
@@ -78,44 +75,31 @@
                                 <input type="date">
                             </div>
 
-                            <div class="col">
-                                <label>Age</label>
-                                <input type="number">
-                            </div>
-
                         </div>
 
-                        <div class="form-group">
+                        <div class="row">
                             <label>State of Origin</label>
                             <input type="text">
-                        </div>
 
-                        <div class="form-group">
                             <label>Local Government Area</label>
                             <input type="text">
-                        </div>
+                            </div>
+                        </div> 
 
-                        <div class="form-group">
+                        <div class="row">
                             <label>Nationality</label>
-                            <input type="text" value="Nigerian">
-                        </div>
+                            <select name="Text" id="">
+                                <option>Select Country</option>
+                                <option>Nigeria</option>
+                                <option>Others</option>
+                            </select>
 
-                        <div class="form-group">
                             <label>Home Address</label>
                             <textarea rows="3"></textarea>
+                            
                         </div>
 
-                        <div class="form-group">
-                            <label>Marital Status</label>
-                            <select>
-                                <option>Select Relationship</option>
-                                <option>Single</option>
-                                <option>Married</option>
-                                <option>Widow/Widower</option>
-                                <option>Divorced</option>
-                            </select>
-                        </div>
-
+                        
                         <!-- CONTACT -->
                         <h2>Contact Information</h2>
 
@@ -131,24 +115,6 @@
                                 <input type="tel">
                             </div>
 
-                        </div>
-
-                        <!-- NEXT OF KIN -->
-                        <h2>Next of Kin Information</h2>
-
-                        <div class="form-group">
-                            <label>Next of Kin Name</label>
-                            <input type="text">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Relationship</label>
-                            <input type="text">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel">
                         </div>
 
                         <!-- ACADEMIC -->
@@ -187,24 +153,6 @@
                                 </select>
                             </div>
 
-                        </div>
-
-                        <!-- SCHOOLS ATTENDED -->
-                        <h2>Schools Attended</h2>
-
-                        <div class="form-group">
-                            <label>Primary School Attended</label>
-                            <input type="text">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Secondary School Attended</label>
-                            <input type="text">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Previous Institution (if any)</label>
-                            <input type="text">
                         </div>
 
                         <!-- CERTIFICATES -->

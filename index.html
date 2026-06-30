@@ -18,22 +18,26 @@
                 <img src="ei_1763096957655-removebg-preview.png">
                 <span>The Bliss College Of<br>Technology Abeokuta</span>
             </div>
+            
             <div class="login-form">
                 <h2>You Are Welcome!</h2>
                 <h4>Input your data to login</h4>
-                <form action="login.php" method="post">
+                <small class="error" id="loginMessage"></small>
+                <form id="login-form-box">
                     <div class="inputbox">
-                        <input type="text" name="studentID" placeholder="0987654321" required>
+                        <input type="text" id="StudentID" name="studentID" placeholder="0987654321" required>
                         <span>Student ID</span>
+                        <small class="error" id="StudentIdError"></small>
                     </div>
                     <div class="inputbox">
-                        <input type="password" name="password" placeholder="Enter Password" required>
+                        <input type="password" id="Password" name="password" placeholder="Enter Password" required>
                         <span>Password</span>
+                        <small class="error" id="PasswordError"></small>
                     </div>
-                    <button type="submit" name="login">Login</button>
+                    <button type="submit" id="loginbtn" >Login</button>
 
                     <div class="remember">
-                        <input type="checkbox" name="remember" id="remember">
+                        <input type="checkbox" name="remember" id="rememberMe">
                         <span>Remember me</span>
                     </div>
 
@@ -49,4 +53,6 @@
     </div>
     
 </body>
+<script src="config.js"></script>
+<script src="script.js"></script>
 </html>
