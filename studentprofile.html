@@ -21,60 +21,51 @@
             <h1>Student Profile</h1>
             
             
-            <div class="student-data">
-                <img src="user image.jpg" alt="Student Photo" class="profile-photo">
-                <h2>Musa Olawale Chukwudi</h2>
-                <p><strong>Student ID:</strong> 0987654321</p>
-                <p><strong>Age:</strong> 20</p> 
-                <p><strong>Sex:</strong> Male</p>
-                <p><strong>Course:</strong> Computer Science</p>
-                <p><strong>Level:</strong> 200</p>
-                <p><strong>Session:</strong> 2026/2027</p>
-                <p><strong>State of Origin:</strong> FCT</p>
-                <p><strong>Telephone No:</strong> +234 801 234 5678</p>
-                <p><strong>Email:</strong> moc123@gmail.com</p>
-            </div>
+            <div class="profile-container">
 
-            <div class="registeredcourses">
+                <img id="passport" alt="Student Passport">
+
+                <h2 id="fullName"></h2>
+
+                <p><strong>Student ID:</strong> <span id="studentId"></span></p>
+                <p><strong>Matric No:</strong> <span id="matricNo"></span></p>
+                <p><strong>Gender:</strong> <span id="gender"></span></p>
+                <p><strong>Age:</strong> <span id="age"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Phone:</strong> <span id="phone"></span></p>
+                <p><strong>State:</strong> <span id="state"></span></p>
+                <p><strong>Faculty:</strong> <span id="faculty"></span></p>
+                <p><strong>Department:</strong> <span id="department"></span></p>
+                <p><strong>Level:</strong> <span id="level"></span></p>
+                <p><strong>Session:</strong> <span id="session"></span></p>
+                <p><strong>CGPA:</strong> <span id="cgpa"></span></p>
+                 
+                
+
                 <h3>Registered Courses</h3>
+
                 <table>
                     <thead>
                         <tr>
-                            <th>Course Title</th>
+                            <th>S/N</th>
                             <th>Course Code</th>
+                            <th>Course Title</th>
                             <th>Course Unit</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Introduction to Bioinformatics</td>
-                            <td>BIO 201</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Research Methodology</td>
-                            <td>GNS 202</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>Computer Applications</td>
-                            <td>CSC 203</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Environmental Science</td>
-                            <td>ENV 201</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Total</strong></td>
-                            <td></td>
-                            <td><strong>11</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
+                    <tbody id="coursesTable">
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Total Units</strong></td>
+                            <td id="totalUnits"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
 
             <div class="button-container">
                 <button>Download</button>
@@ -84,6 +75,87 @@
     
         </div>
 
-    </div>    
+    </div> 
+
+    <script src="config.js"></script>
+    <script>
+    const student =
+    JSON.parse(
+        localStorage.getItem("currentStudent")
+    );
+
+    if(!student){
+
+        window.location.href = "index.html";
+
+    }
+
+    // Biodata
+
+    document.getElementById("passport").src =
+    student.passport;
+
+    document.getElementById("fullName").textContent =
+    `${student.firstName} ${student.middleName} ${student.surname}`;
+
+    document.getElementById("studentId").textContent =
+    student.studentId;
+
+    document.getElementById("matricNo").textContent =
+    student.matricNo;
+
+    document.getElementById("gender").textContent =
+    student.gender;
+
+    document.getElementById("age").textContent =
+    student.age;
+
+    document.getElementById("email").textContent =
+    student.email;
+
+    document.getElementById("phone").textContent =
+    student.phone;
+
+    document.getElementById("state").textContent =
+    student.stateOfOrigin;
+
+    document.getElementById("faculty").textContent =
+    student.faculty;
+
+    document.getElementById("department").textContent =
+    student.department;
+
+    document.getElementById("level").textContent =
+    student.level;
+
+    document.getElementById("session").textContent =
+    student.session;
+
+    document.getElementById("cgpa").textContent =
+    student.cgpa;
+
+
+
+        const coursesTable = document.getElementById("coursesTable");
+
+        let totalUnits = 0;
+
+        student.courses.forEach((course, index) => {
+
+            totalUnits += course.unit;
+
+            coursesTable.innerHTML += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${course.code}</td>
+                    <td>${course.title}</td>
+                    <td>${course.unit}</td>
+                </tr>
+            `;
+
+        });
+
+        document.getElementById("totalUnits").textContent = totalUnits;
+    </script>
 </body>
 </html>

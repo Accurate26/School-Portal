@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0; 
-    /* height: 100vh; */
     font-family: 'Poppins', sans-serif;        
 }
 
@@ -167,7 +166,6 @@ form button{
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
-    /* box-sizing: border-box; */
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -267,12 +265,10 @@ form button{
     /* overflow-y: scroll; */
 }
 
-.student-data{
-    /* background: rgba(217, 227, 248, 0.8); */
+.profile-container{
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     gap: 12px;
     display: flex;
     flex-direction: column;
@@ -344,96 +340,29 @@ form button{
 
 }
 
-.registeredcourses h3{
+.profile-container h3{
     color: #050789;
     margin-bottom: 20px;
 }
 
-.registeredcourses table{
+.profile-container table{
     width: 100%;
     border-collapse: collapse;
     
 }
 
-.registeredcourses th, .registeredcourses td{
+.profile-container th, .profile-container td{
     border: 1px solid #050789;
     padding: 10px;
     text-align: left;
     
 }
 
-.registeredcourses th{
+.profile-container th{
     background-color: #0234a0;
     color: white;
 }
 
-
-
-
-
-/* COURSE REGISTRATION CSS */
-.course-reg{
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    gap: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 800px;
-    margin: 10px auto;
-}
-
-.header h1{
-    color: #050789;
-    margin-bottom: 20px;
-    margin-left: 40%;
-
-}
-
-.course-reg form{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.course-reg form label{
-    color: #000000;
-    font-size: 16px;
-    align-self: flex-start;
-}
-
-.course-reg form input[type="text"], input[type="number"]{
-    border: none;
-    border-bottom: 1px solid #050789;
-    background: transparent;
-    outline: none;
-    height: 30px;
-    color: #000000;
-    font-size: 16px;
-    width: 300px;
-}
-
-.course-reg form button{
-    border: none;
-    outline: none;
-    height: 40px;
-    width: 200px;
-    background: #0234a0;
-    color: gold;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.course-reg form button:hover{
-    background: #050789;
-    color: white;
-}
 
 
 /* RESULT PAGE */
@@ -441,36 +370,27 @@ form button{
 .resultbkg{
     width: 100%;
     height: 100vh;
-    background-image: url(20260622_120730.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
-    background-blend-mode: darken;
+    background-color: #f0f3f4;
 }
 
 
 .resultctn{
-    background: rgba(255, 255, 255, 0.8);
+    background: #d1e3f2;
     border-radius: 10px;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     gap: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 800px;
-    margin: 30px auto;
+    margin: 0px auto;
 }
 
 .resultportal h1{
     color: #050789;
     margin-bottom: 20px;
-    /* margin-left: 20%; */
     font-size: 20px;
 
 }
@@ -481,178 +401,53 @@ form button{
     
 }
 
-.resultctn .studentinfo table{
+.resultctn table{
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
     background: rgba(212, 224, 237, 0.8);
+    margin-top: 40px;
 }
 
-.resultctn .studentinfo th, .resultctn .studentinfo td{
+.resultctn th, .resultctn td{
     border: 1px solid #050789;
     padding: 10px;
     text-align: left;
 }
 
-.resultctn .studentinfo th{
+.resultctn th{
     background-color: #26289c;
     color: rgb(255, 255, 255);
 }
 
-.studentresult table{
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(212, 224, 237, 0.8);
+.summary{
+    margin-top:25px;
+    display:flex;
+    gap:20px;
+    justify-content:flex-end;
 }
-
-.studentresult th, .studentresult td{
-    border: 1px solid #050789;
-    padding: 10px;
-    text-align: left;
-}
-
-.studentresult th{
-    background-color: #26289c;
-    color: rgb(255, 255, 255);
-}
-
+ 
 .resultctn .download-button{
-    width: 200px;
-    height: 40px;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    color: white;
     border: none;
-    background-color: #0234a0;
-    border-radius: 5px;
-    color: gold;
-    margin: 20px auto;
-    font-size: 16px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:0 4px 12px rgba(37,99,235,.25);
+}
+
+.resultctn .download-button:active{
+    transform: translateY(0);
 }
 
 .resultctn .download-button:hover{
-    background: #050789;
-    color: white;
+    background: linear-gradient(135deg,#2563eb,#052783);
+    transform: translateY(-3px);
+    box-shadow:0 8px 20px rgba(37,99,235,.35);
 }
 
-/* REGISTRATION PORTAL */
-
-.container-reg{
-    background-color: rgb(209, 227, 242);
-}
-
-.regcard{
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    gap: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-    width: 800px;
-    margin: 0px auto;
-    /* overflow-y: scroll; */
-
-}
-
-.welcome{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.reginput{
-    width: 700px;
-    
-}
-.reginput h1{
-    text-align:center;
-    color:#000c66;
-}
-
-.reginput h2{
-    color: #050789;
-    border-bottom:2px solid #003366;
-    padding-bottom:20px;
-    margin-top: 20px;
-}
-
-.reginput .form-group{
-    margin-bottom:40px;
-}
-
-.reginput label{
-    display:flex;
-    margin-bottom:1px;
-    margin-top: 15px;
-    font-weight:bold;
-}
-
-.reginput input,
-select,
-textarea{
-    width:100%;
-    padding: 5px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    background-color: #d4ddec;
-}
-
-.reginput .row{
-    display:flex;
-    gap:20px;
-}
-
-.reginput .col{
-    flex: 4;
-}
-
-.reginput textarea{
-    resize:vertical;
-}
-
-.reginput button{
-    padding: auto 20px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    margin-top:10px;
-}
-
-.reginput .submit-btn{
-    background:#090ddf;
-    color:gold;
-}
-
-.reginput .submit-btn:hover{
-    background:#101169;
-    color:rgb(255, 255, 255);
-    font-size: 20px;
-    font-weight: bold;
-    
-}
-
-.reginput .reset-btn{
-    background:#000000;
-    color:white;
-}
-
-.reginput .reset-btn:hover{
-    background:#a90909;
-    color:white;
-}
-
-.reginput .buttons{
-    text-align:center;
-}
-
-@media(max-width:768px){
-
-    .row{
-        flex-direction:column;
-    }
-
-}
 
