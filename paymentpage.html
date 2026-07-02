@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Fees Payment Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="payment.css">
+
+</head>
+<body>
+
+    <div class="containerpp">
+
+        <div class="payment-card">
+
+            <div class="logo">
+                <img src="ei_1763096957655-removebg-preview.png">
+                <span>The Bliss College Of<br>Technology Abeokuta</span>
+            </div>
+
+            <div class="header">
+                <h1>School Fees Payment Portal</h1>
+            </div>
+
+            <div class="student-section">
+
+                <div class="student-info">
+                    <img id="passport" alt="Passport">
+
+                    <div>
+                        <h2 id="studentName"></h2>
+                        <p id="matricNo"></p>
+                        <p id="department"></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="fee-table">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Fee Item</th>
+                            <th>Amount (₦)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Tuition Fee</td>
+                            <td>120,000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Library Fee</td>
+                            <td>10,000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Laboratory Fee</td>
+                            <td>15,000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Examination Fee</td>
+                            <td>5,000</td>
+                        </tr>
+
+                    </tbody>
+
+                    <tfoot>
+
+                        <tr>
+                            <th>Total</th>
+                            <th id="totalFee">150,000</th>
+                        </tr>
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+            <div class="payment-section">
+
+                <h3>Select Payment Method</h3>
+
+                <select id="paymentMethod">
+
+                    <option value="">
+                        Choose Method
+                    </option>
+
+                    <option>Bank Transfer</option>
+
+                    <option>Debit Card</option>
+
+                    <option>USSD</option>
+
+                </select>
+
+                <button id="payBtn">
+                    Pay Now
+                </button>
+
+            </div>
+
+            <div id="paymentStatus"></div>
+
+        </div>
+
+    </div>
+
+<script>
+    const student =
+    JSON.parse(
+    localStorage.getItem("currentStudent")
+    );
+
+    if(!student){
+
+        window.location.href =
+        "login.html";
+
+    }
+
+    document.getElementById("studentName")
+    .textContent =
+    `${student.firstName} ${student.surname}`;
+
+    document.getElementById("matricNo")
+    .textContent =
+    student.matricNo;
+
+    document.getElementById("department")
+    .textContent =
+    student.department;
+
+    document.getElementById("passport")
+    .src =
+    student.passport;
+
+    const payBtn =
+    document.getElementById("payBtn");
+
+    const status =
+    document.getElementById("paymentStatus");
+
+    payBtn.addEventListener(
+    "click",
+    function(){
+
+        const method =
+        document.getElementById(
+        "paymentMethod"
+        ).value;
+
+        if(method === ""){
+
+            status.className =
+            "error";
+
+            status.textContent =
+            "Please select a payment method.";
+
+            return;
+
+        }
+
+        payBtn.disabled = true;
+
+        payBtn.textContent =
+        "Processing Payment...";
+
+        setTimeout(()=>{
+
+            const receipt = {
+
+                receiptNo:
+                "RCP" +
+                Date.now(),
+
+                studentId:
+                student.studentId,
+
+                name:
+                `${student.firstName}
+                ${student.surname}`,
+
+                amount:
+                150000,
+
+                method:
+                method,
+
+                date:
+                new Date()
+                .toLocaleString(),
+
+                status:
+                "Paid"
+
+            };
+
+            localStorage.setItem(
+            "receipt",
+            JSON.stringify(receipt)
+            );
+
+            status.className =
+            "success";
+
+            status.textContent =
+            "Payment Successful ✔";
+
+            payBtn.textContent =
+            "Paid";
+
+        },2000);
+
+    });
+
+</script>
+
+</body>
+</html>
+    
+</body>
+</html>
